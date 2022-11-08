@@ -1,13 +1,14 @@
+import Repos from "./components/Repos"
 
 
 function App() {
-
+  
 
   return (
     <div className="App">
-      
-    </div>
+      <Repos/>
+      </div>
   )
 }
 
-export default App
+export default App;
