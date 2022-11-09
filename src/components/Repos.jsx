@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+//import { rollupVersion } from "vite";
+import RepoDisplay from "./RepoDisplay";
 
 
-export default function Repos() {
+
+ function Repos() {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -13,7 +16,7 @@ export default function Repos() {
         "https://api.github.com/users/bolajiayodeji/repos"
       );
       const allRepos = await response.json();
-      console.log(allRepos);
+      //console.log(allRepos);
       setRepos(allRepos);
       setLoading(false);
     };
@@ -25,28 +28,24 @@ export default function Repos() {
 
  
   const pages = repos.length;
-  const PER_PAGE = 5;
-  const nextPage = (page - 1) * PER_PAGE;
-  //const nextPage = (page * PER_PAGE) - PER_PAGE;
+  const PER_PAGE = 6;
+  //const nextPage = (page - 1) * PER_PAGE;
+  const nextPage = (page * PER_PAGE) - PER_PAGE;
 
   return (
-    <div className="App">
-      <h1>My Projects</h1>
-      <p>GitHub repositories that I've built.</p>
-      <ul>
-        {repos.slice((page - 1) * PER_PAGE, page * PER_PAGE).map((repo) => {
+    <div className="app">
+      <h1>My Project</h1>
+      <p>Github repositories that i've built</p>
+      <div className="repos-container">
+      {repos.slice((page - 1) * PER_PAGE, page * PER_PAGE).map((repo) => {
           return (
-            <li key={repo.id}>
-              <p>{repo.name}</p>
-              <p>{repo.description}</p>
-              <p>{repo.language}</p>
-              <p>{repo.forks_count}</p>
-              <p>{repo.stargazers_count}</p>
-            </li>
+           <RepoDisplay 
+           key={repo.id}
+           {...repo}/>
           );
         })}
-      </ul>
-      <p>
+      </div>
+      <p className="paginate">
         {" "}
         Pages: {page} of {pages/PER_PAGE}
       </p>
@@ -54,4 +53,4 @@ export default function Repos() {
       <button onClick={() => setPage((prev) => prev + 1)}>Next</button>
     </div>
   );
-}
+}export default Repos
