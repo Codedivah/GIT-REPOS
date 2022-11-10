@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.App{
+    min-height: 100vh;
+    background-color: #F7F7F7;
+    display: flex;
+    width: 100%;
+   
+}
+
+.img-container{
+    width: 30%;
+    background-color: #fff;
+    padding: 50px;
+    
+
+}
+.repo-container{
+    width: 70%;
+}
+.app{
+    margin: 50px;
+}
+.app h1{
+    margin-bottom: 10px;
+}
+.app p{
+    font-size: 20px ;
+    margin-bottom: 20px;
+}
+.github-img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.img-text{
+    margin-top: 30px;
+}
+.img-text h1{
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 1.25 !important;
+
+}
+.git-icon{
+    display: flex;
+}
+.img-text a{
+  
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+}
+.git{
+    margin-bottom:16px ;
+}
+.location{
+    margin-left: 10px;
+}
+
+.repos-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   
+    gap:20px;
+    
+}
+.repo-content{
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    
+}
+.repo-content > *{
+    margin-bottom: 10px;
+    
+}
+span{
+    margin-right: 10px;
+}
+.language{
+    display: flex;
+    align-items: center;
+    
+    
+}.language p{
+    margin-right: 20px;
+}
+.circle{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    
+}
+.repo-content p{
+    font-size: 16px;
+}
+@media (max-width:900px){
+    .repos-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+.paginate{
+    margin-top: 30px;
+    
+}
+button{
+    margin: 15px 10px 0 0;
+    padding: 8px;
+}
+.start-gaze{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+}
+.star-gaze a{
+    text-decoration: none;
+}
+.star{
+    margin-right: 5px;
+    display: flex;
+    align-items: flex-end;
+
+}
+
+@media(max-width: 760px){
+    .App{
+        
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .img-container, .repo-container{
+        width: 100%;
+        
+    }
+    
+}
