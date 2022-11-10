@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Loader from "./Loader";
 //import { rollupVersion } from "vite";
 import RepoDisplay from "./RepoDisplay";
 
@@ -23,7 +24,7 @@ import RepoDisplay from "./RepoDisplay";
     getRepos();
   }, []);
   if (loading) {
-    return <h3>Loading...</h3>;
+    return <Loader/>;
   }
 
  
