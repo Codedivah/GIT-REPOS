@@ -145,3 +145,12 @@ button{
     }
     
 }
+
+.name{
+    color:blue
+}
+
+.label{
+   display: inline-block;
+
+}

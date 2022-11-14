@@ -1,5 +1,6 @@
 import {BsFillFileEarmarkPostFill} from 'react-icons/bs'
 import {AiFillStar} from 'react-icons/ai'
+import { Link } from 'react-router-dom';
 
 const RepoDisplay = (props) => {
         const colors = {
@@ -12,10 +13,11 @@ const RepoDisplay = (props) => {
     return (
      
         <div className="repo-content">
-            <h3>
+            
                 <span ><BsFillFileEarmarkPostFill/></span>
-                <a href={props.html_url}>{props.name}</a></h3>
-            <p>{props.description}</p>
+                {/* <a href={props.html_url}>{props.name}</a> */}
+                <Link to={props.name}>{props.name}</Link>
+                            <p>{props.description}</p>
             <div className="language">
                 <p >
                     <span className='circle'
